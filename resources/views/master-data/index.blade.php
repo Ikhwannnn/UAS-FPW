@@ -26,6 +26,13 @@
                 </button>
             </a>
 
+            <a href="{{ route('mahasiswa-export-excel')}}">
+                <button
+                    class="px-6 py-4 text-white bg-blue-500 border border-blue-500 rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Export Data
+                </button>
+            </a>
+
             <table class="min-w-full border border-collapse border-gray-200">
                 <thead>
                     <tr class="bg-gray-100">

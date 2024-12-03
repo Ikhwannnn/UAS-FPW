@@ -26,6 +26,8 @@ Route::prefix('mahasiswa')->group(function () {
     Route::get('/{id}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit'); // Menampilkan form edit mahasiswa
     Route::put('/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update'); // Mengupdate data mahasiswa
     Route::delete('/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa-delete'); // Menghapus mahasiswa
+    Route::get('/export/excel', [MahasiswaController::class, 'exportExcel'])->name('mahasiswa-export-excel'); //Export Excel
 });
+
 
 require __DIR__.'/auth.php';

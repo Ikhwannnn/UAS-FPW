@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\MahasiswaExport;
 
 class MahasiswaController extends Controller
 {
@@ -77,4 +79,10 @@ class MahasiswaController extends Controller
             
             return redirect()->route('mahasiswa.index');
     }
+
+    public function exportExcel () {
+        return Excel::download(new MahasiswaExport, 'product.xlsx');
+    }
 }
+
+    
