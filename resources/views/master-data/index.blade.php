@@ -44,7 +44,10 @@
                             <td class="px-4 py-2 border border-gray-200">{{ $item->nama }}</td>
                             <td class="px-4 py-2 border border-gray-200">{{ $item->npm }}</td>
                             <td class="px-4 py-2 border border-gray-200">{{ $item->prodi }}</td>
-                            <td class="px-4 py-2 border border-gray-200"></td>
+                            <td class="px-4 py-2 border border-gray-200">
+                                <button class="px-2 text-red-600 hover:text-red-800"
+                                    onclick="confirmDelete('{{ route('mahasiswa-delete', $item->id) }}')">Hapus</button>
+                            </td>
                         </tr>
                     @endforeach
 
