@@ -11,7 +11,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        $mahasiswa = Mahasiswa::all(); // Mengambil semua data mahasiswa
+        return view('master-data.index', compact('mahasiswa')); // Kirim ke view
     }
 
     /**
@@ -19,7 +20,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('master-data.create'); // Menampilkan form tambah mahasiswa
     }
 
     /**
@@ -28,8 +29,8 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'npm' => 'required',
             'nama' => 'required',
+            "npm" => 'required|unique:mahasiswas,npm',
             'prodi' => 'required',
         ]);
     
